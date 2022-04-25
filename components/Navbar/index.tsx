@@ -6,7 +6,7 @@ const Navbar = (props: Props) => {
   return (
     <nav className="sticky top-0 flex h-20 w-full items-center justify-around bg-orange-300">
       <a href="/">Ebenezer</a>
-      <ul className="flex">
+      <ul className="hidden md:flex">
         <li className="px-3 hover:underline">
           <a href="/">INICIO</a>
         </li>

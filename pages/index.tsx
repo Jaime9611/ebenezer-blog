@@ -24,7 +24,15 @@ const Home: NextPage = () => {
         <h1 className="text-3xl font-bold tracking-wider">Ebenezer</h1>
       </div>
       <Navbar />
-      <div className="h-screen w-full">faf</div>
+      <div className="flex h-screen w-full items-center justify-center bg-amber-200 text-3xl">
+        SOBRE MI
+      </div>
+      <div className="flex h-screen w-full items-center justify-center bg-lime-200 text-3xl">
+        BLOG
+      </div>
+      <div className="flex h-screen w-full items-center justify-center bg-slate-200 text-3xl">
+        ESCRIBEME
+      </div>
     </div>
   );
 };
