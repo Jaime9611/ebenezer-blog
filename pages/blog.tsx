@@ -1,15 +1,23 @@
 import Head from 'next/head';
 import React from 'react';
+
 import Navbar from '../components/Navbar';
 
-const posts: { title: string; excerpt: string }[] = [
-  { title: 'React Testing', excerpt: 'Learn React Testing' },
-  { title: 'React with Tailwind', excerpt: 'Learn React with Tailwind' },
-];
+import { getPosts } from '../services';
 
-type Props = {};
+import { PostNode, PostsList } from '../types';
 
-function Blog({}: Props) {
+export async function getStaticProps() {
+  const posts: PostNode = (await getPosts()) || [];
+
+  return { props: { posts } };
+}
+
+type Props = {
+  posts: PostsList;
+};
+
+function Blog({ posts }: Props) {
   return (
     <>
       <Head>
@@ -20,12 +28,15 @@ function Blog({}: Props) {
       <div className="container mx-auto mt-8 mb-8 px-10">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="col-span-1 bg-gray-300 lg:col-span-8">
-            {posts.map((post) => (
-              <div>
-                {post.title}
-                {post.excerpt}
-              </div>
-            ))}
+            {posts.map((post) => {
+              console.log(post);
+              return (
+                <div>
+                  {post.node.title}
+                  {post.node.abstract}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
