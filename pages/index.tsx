@@ -7,16 +7,11 @@ import PostWidget from '../components/PostWidget';
 
 import Navbar from '../components/Navbar';
 
-const posts: { title: string; excerpt: string }[] = [
-  { title: 'React Testing', excerpt: 'Learn React Testing' },
-  { title: 'React with Tailwind', excerpt: 'Learn React with Tailwind' },
-];
-
 const Home: NextPage = () => {
   return (
     <div className="w-full">
       <Head>
-        <title>Ebenezer Blog</title>
+        <title>Ebenezer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="hero-img flex flex-col items-center justify-center bg-red-50">
