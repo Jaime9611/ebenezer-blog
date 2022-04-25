@@ -9,9 +9,8 @@ const Navbar = (props: Props) => {
     <nav className="sticky top-0 flex h-20 w-full items-center justify-around bg-orange-300">
       <Link href="/">Ebenezer</Link>
       <ul className="hidden md:flex">
-        <MenuLink text="INICIO" href="/" />
-        <MenuLink text="SOBRE MI" href="#sobremi" />
         <MenuLink text="BLOG" href="/blog" />
+        <MenuLink text="SOBRE MI" href="#sobremi" />
         <MenuLink text="ESCRIBEME" href="#escribeme" />
       </ul>
       <ul className="flex">
