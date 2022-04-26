@@ -2,6 +2,7 @@ import Head from 'next/head';
 import React from 'react';
 
 import Navbar from '../components/Navbar';
+import PostCard from '../components/PostCard';
 
 import { getPosts } from '../services';
 
@@ -27,16 +28,10 @@ function Blog({ posts }: Props) {
       <Navbar />
       <div className="container mx-auto mt-8 mb-8 px-10">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          <div className="col-span-1 bg-gray-300 lg:col-span-8">
-            {posts.map((post) => {
-              console.log(post);
-              return (
-                <div>
-                  {post.node.title}
-                  {post.node.abstract}
-                </div>
-              );
-            })}
+          <div className="col-span-1 lg:col-span-8">
+            {posts.map((post) => (
+              <PostCard key={post.node.title} post={post.node} />
+            ))}
           </div>
         </div>
       </div>

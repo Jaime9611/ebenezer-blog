@@ -2,7 +2,7 @@ export type Author = {
   about: string;
   name: string;
   id: string;
-  photo: string | null;
+  photo: { url: string | null };
 };
 export type Categories = string[];
 export type PostItem = {
@@ -12,6 +12,7 @@ export type PostItem = {
   author: Author;
   categories: Categories;
   title: string;
+  featuredImage: { url: string };
 };
 export type PostNode = {
   node: PostItem;
