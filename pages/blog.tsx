@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import React from 'react';
+import Categories from '../components/Categories';
 
 import Navbar from '../components/Navbar';
 import PostCard from '../components/PostCard';
+import PostWidget from '../components/PostWidget';
 
 import { getPosts } from '../services';
 
@@ -32,6 +34,12 @@ function Blog({ posts }: Props) {
             {posts.map((post) => (
               <PostCard key={post.node.title} post={post.node} />
             ))}
+          </div>
+          <div className="col-span-1 lg:col-span-4">
+            <div className="relative top-8 lg:sticky">
+              <PostWidget />
+              <Categories />
+            </div>
           </div>
         </div>
       </div>
