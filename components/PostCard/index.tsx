@@ -68,7 +68,7 @@ const PostCard = ({ post }: Props) => {
         {post.abstract}
       </p>
       <div className="text-center">
-        <Link href={`/posts/${post.slug}`}>
+        <Link href={`/post/${post.slug}`}>
           <span className="inline-block transform cursor-pointer rounded-full bg-orange-500 px-8 py-3 text-lg font-medium text-white transition duration-500 hover:bg-orange-300">
             Continar Leyendo
           </span>

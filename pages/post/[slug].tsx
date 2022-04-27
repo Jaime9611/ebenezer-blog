@@ -1,9 +1,15 @@
 import React from 'react';
+import Navbar from '../../components/Navbar';
 
 type Props = {};
 
-const Post = (props: Props) => {
-  return <div>Post</div>;
+const PostDetails = (props: Props) => {
+  return (
+    <>
+      <Navbar />
+      <div>Post</div>
+    </>
+  );
 };
 
-export default Post;
+export default PostDetails;

@@ -15,12 +15,13 @@ const Navbar = (props: Props) => {
   useEffect(() => {
     getCategories().then((result) => setCategories(result));
   }, []);
-
   return (
     <nav className="sticky top-0 z-10 flex h-20 w-full items-center justify-around bg-orange-300">
       <Link href="/">Ebenezer</Link>
-      {router.pathname === '/blog' ? (
+      {/* router.pathname === '/blog' || router.pathname.includes('/post') */}
+      {router.pathname !== '/' ? (
         <ul className="hidden md:flex">
+          <MenuLink text="INICIO" href="/blog" />
           {categories?.map((category) => (
             <MenuLink
               key={category.slug}
