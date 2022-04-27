@@ -4,7 +4,7 @@ export type Author = {
   id: string;
   photo: { url: string | null };
 };
-export type Categories = string[];
+export type Categories = { name: string; slug: string }[];
 export type PostItem = {
   createdAt: string;
   slug: string;
