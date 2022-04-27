@@ -22,7 +22,7 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
 
   return {
     paths: posts.map(({ node: { slug } }) => ({ params: { slug } })),
-    fallback: true,
+    fallback: false,
   };
 }
 
