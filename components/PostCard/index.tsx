@@ -35,9 +35,9 @@ const PostCard = ({ post }: Props) => {
               fill="currentColor"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
           )}
@@ -52,11 +52,11 @@ const PostCard = ({ post }: Props) => {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            stroke-width="2"
+            strokeWidth="2"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
             />
           </svg>
@@ -65,7 +65,16 @@ const PostCard = ({ post }: Props) => {
           </span>
         </div>
       </div>
-      <p>{post.abstract}</p>
+      <p className="mb-8 px-4 text-center text-lg font-normal text-gray-700 lg:px-20">
+        {post.abstract}
+      </p>
+      <div className="text-center">
+        <Link href={`/posts/${post.slug}`}>
+          <span className="inline-block transform cursor-pointer rounded-full bg-orange-500 px-8 py-3 text-lg font-medium text-white transition duration-500 hover:bg-orange-300">
+            Continar Leyendo
+          </span>
+        </Link>
+      </div>
     </div>
   );
 };
