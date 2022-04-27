@@ -36,7 +36,7 @@ function Blog({ posts }: Props) {
             ))}
           </div>
           <div className="col-span-1 lg:col-span-4">
-            <div className="relative top-8 lg:sticky">
+            <div className="relative top-24 lg:sticky">
               <PostWidget />
               <Categories />
             </div>
