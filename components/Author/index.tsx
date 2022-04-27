@@ -1,6 +1,10 @@
 import React from 'react';
 
-type Props = {};
+import { Author } from '../../types';
+
+type Props = {
+  author: Author;
+};
 
 const Author = (props: Props) => {
   return <div>Author</div>;

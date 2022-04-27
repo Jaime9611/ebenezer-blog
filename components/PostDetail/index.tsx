@@ -1,6 +1,9 @@
 import React from 'react';
+import { PostItem } from '../../types';
 
-type Props = {};
+type Props = {
+  post: PostItem;
+};
 
 const PostDetail = (props: Props) => {
   return <div>PostDetail</div>;

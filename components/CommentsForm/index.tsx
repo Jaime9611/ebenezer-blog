@@ -1,6 +1,8 @@
 import React from 'react';
 
-type Props = {};
+type Props = {
+  slug: string;
+};
 
 const CommentsForm = (props: Props) => {
   return <div>CommentsForm</div>;

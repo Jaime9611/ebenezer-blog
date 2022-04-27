@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
 import moment from 'moment';
-import { PostItem } from '../../types';
+import { Categories, PostItem } from '../../types';
 import { getRecentPosts, getSimilarPosts } from '../../services';
 import Link from 'next/link';
 
 type Props = {
-  categories: [];
+  categories: string[];
   slug: string;
 };
 

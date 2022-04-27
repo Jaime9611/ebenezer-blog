@@ -1,6 +1,8 @@
 import React from 'react';
 
-type Props = {};
+type Props = {
+  slug: string;
+};
 
 const Comments = (props: Props) => {
   return <div>Comments</div>;
