@@ -25,7 +25,11 @@ const PostCard = ({ post }: Props) => {
       <div className="mb-8 flex w-full items-center justify-center text-center">
         <div className="mr-6 mb-0 flex items-center justify-center lg:w-auto">
           {post.author.photo ? (
-            <img src={post.author.photo.url || ''} alt={post.author.name} />
+            <img
+              src={post.author.photo.url || ''}
+              alt={post.author.name}
+              className="rounded-full align-middle"
+            />
           ) : (
             <svg
               xmlns="http://www.w3.org/2000/svg"

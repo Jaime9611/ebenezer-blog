@@ -4,6 +4,30 @@ export type Author = {
   id: string;
   photo: { url: string | null };
 };
+export type TextNode = {
+  text: string[];
+  bold?: boolean;
+  italic?: boolean;
+  underline?: boolean;
+};
+export type ImgNode = {
+  title: string;
+  width: string;
+  height: string;
+  src: string;
+};
+export type TextTypes =
+  | 'paragraph'
+  | 'heading-three'
+  | 'heading-four'
+  | 'image';
+export type ContentNode = {
+  children: TextNode[];
+  type: TextTypes;
+};
+export type Content = {
+  raw: { children: ContentNode[] };
+};
 export type Categories = { name: string; slug: string }[];
 export type PostItem = {
   createdAt: string;
@@ -13,6 +37,7 @@ export type PostItem = {
   categories: Categories;
   title: string;
   featuredImage: { url: string };
+  content: Content;
 };
 export type PostNode = {
   node: PostItem;
