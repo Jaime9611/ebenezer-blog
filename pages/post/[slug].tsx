@@ -1,4 +1,9 @@
-import { GetStaticPathsResult, GetStaticPropsContext } from 'next';
+import {
+  GetStaticPaths,
+  GetStaticPathsResult,
+  GetStaticProps,
+  GetStaticPropsContext,
+} from 'next';
 import Head from 'next/head';
 import React from 'react';
 import Author from '../../components/Author';
@@ -11,20 +16,20 @@ import PostWidget from '../../components/PostWidget';
 import { getPostDetails, getPosts } from '../../services';
 import { PostItem } from '../../types';
 
-export async function getStaticProps({ params }: GetStaticPropsContext) {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const data = await getPostDetails(params?.slug as string);
 
   return { props: { post: data } };
-}
+};
 
-export async function getStaticPaths(): Promise<GetStaticPathsResult> {
+export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getPosts();
 
   return {
     paths: posts.map(({ node: { slug } }) => ({ params: { slug } })),
-    fallback: false,
+    fallback: true,
   };
-}
+};
 
 type Props = {
   post: PostItem;

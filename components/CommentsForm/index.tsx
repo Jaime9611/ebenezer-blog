@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { submitComment } from '../../services';
 
 type Props = {
   slug: string;
@@ -6,12 +7,21 @@ type Props = {
 
 const CommentsForm = ({ slug }: Props) => {
   const [error, setError] = useState(false);
-  const [localStorageData, setLocalStorageData] = useState<string | null>(null);
   const [showSuccessMsg, setShowSuccessMsg] = useState(false);
   const commentEl = useRef<HTMLTextAreaElement>(null);
   const nameEl = useRef<HTMLInputElement>(null);
   const emailEl = useRef<HTMLInputElement>(null);
   const storeDataEl = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const name = localStorage.getItem('name');
+    const email = localStorage.getItem('email');
+
+    if (name && email) {
+      nameEl.current.value = name;
+      emailEl.current.value = email;
+    }
+  }, []);
 
   const handleCommentSubmission = () => {
     setError(false);
@@ -34,11 +44,18 @@ const CommentsForm = ({ slug }: Props) => {
 
     if (storeData) {
       localStorage.setItem('name', name ? name : '');
-      localStorage.setItem('name', email ? email : '');
+      localStorage.setItem('email', email ? email : '');
     } else {
       localStorage.removeItem('name');
       localStorage.removeItem('email');
     }
+
+    submitComment(commentObj).then((res) => {
+      setShowSuccessMsg(true);
+      setTimeout(() => {
+        setShowSuccessMsg(false);
+      }, 3000);
+    });
   };
 
   return (
@@ -77,7 +94,6 @@ const CommentsForm = ({ slug }: Props) => {
             type="checkbox"
             name="storeDate"
             id="storeData"
-            value="true"
           />
           <label
             htmlFor="storeData"
