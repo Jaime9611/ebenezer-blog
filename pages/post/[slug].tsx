@@ -5,11 +5,13 @@ import {
   GetStaticPropsContext,
 } from 'next';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import React from 'react';
 import Author from '../../components/Author';
 import Categories from '../../components/Categories';
 import Comments from '../../components/Comments';
 import CommentsForm from '../../components/CommentsForm';
+import Loader from '../../components/Loader';
 import Navbar from '../../components/Navbar';
 import PostDetail from '../../components/PostDetail';
 import PostWidget from '../../components/PostWidget';
@@ -36,6 +38,12 @@ type Props = {
 };
 
 const PostDetails = ({ post }: Props) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <Loader />;
+  }
+
   return (
     <>
       <Head>
