@@ -60,9 +60,9 @@ const CommentsForm = ({ slug }: Props) => {
   };
 
   return (
-    <div className="roundedlg mb-8 bg-white p-8 pb-12 shadow-lg">
+    <div className="mb-8 rounded-lg bg-white p-8 pb-12 shadow-lg">
       <h3 className="mb-8  border-b pb-4 text-xl font-semibold">
-        Comments Form
+        Deja tu opinion
       </h3>
       <div className="mb-4 grid grid-cols-1 gap-4">
         <textarea
