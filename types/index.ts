@@ -16,6 +16,13 @@ export type ImgNode = {
   height: string;
   src: string;
 };
+export type Comment = {
+  name: string;
+  email: string;
+  comment: string;
+  slug: string;
+};
+
 export type TextTypes =
   | 'paragraph'
   | 'heading-three'

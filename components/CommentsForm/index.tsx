@@ -33,6 +33,7 @@ const CommentsForm = ({ slug }: Props) => {
 
     if (!comment || !name || !email) {
       setError(true);
+      return;
     }
 
     const commentObj = {

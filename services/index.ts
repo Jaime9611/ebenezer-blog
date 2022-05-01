@@ -1,5 +1,5 @@
 import { gql, request } from 'graphql-request';
-import { Categories, PostItem, PostNode } from '../types';
+import { Categories, Comment, PostItem, PostNode } from '../types';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT || '';
 
@@ -134,7 +134,7 @@ export const getCategories = async (): Promise<Categories> => {
   return result.categories;
 };
 
-export const submitComment = async (obj) => {
+export const submitComment = async (obj: Comment) => {
   const result = await fetch('/api/comments', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
