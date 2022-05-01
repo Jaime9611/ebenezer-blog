@@ -21,6 +21,7 @@ export type Comment = {
   email: string;
   comment: string;
   slug: string;
+  createdAt: string;
 };
 
 export type TextTypes =
