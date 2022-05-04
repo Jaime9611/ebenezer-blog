@@ -8,7 +8,7 @@ type Props = {
 
 const MenuLink = ({ text, href }: Props) => {
   return (
-    <li className="px-3 hover:underline">
+    <li className="px-3 text-lg hover:underline">
       <Link href={href}>{text}</Link>
     </li>
   );

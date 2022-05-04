@@ -9,9 +9,16 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --text-navbar: #632626;
+  --font-navbar-logo: 'PT Serif', serif;
+  --font-hero-about: 'Glory', sans-serif;
+  --font-body: 'Glory', sans-serif;
+}
+
 body {
   width: 100%;
-  font-family: 'Glory', sans-serif;
+  font-family: var(--font-body);
 }
 
 .hero-img {
@@ -24,13 +31,26 @@ body {
 }
 
 .hero-about {
-  font-family: 'Glory', sans-serif;
+  font-family: var(--font-hero-about);
+  animation: show-text 1s cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+@keyframes show-text {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .navbar {
-  color: #632626;
-  border-bottom: 2px solid #632626;
+  color: var(--text-navbar);
+  border-top: 1px solid var(--text-navbar);
+  border-bottom: 2px solid var(--text-navbar);
   &-logo {
-    font-family: 'PT Serif', serif;
+    font-family: var(--font-navbar-logo);
   }
 }

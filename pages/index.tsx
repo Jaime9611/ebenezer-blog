@@ -16,7 +16,7 @@ const Home: NextPage = () => {
       </Head>
       <div className="hero-img flex flex-col items-center justify-center object-cover">
         <img className="w-48" src="/logo-blog.svg" alt="logo" />
-        <p className="hero-about mt-8 w-1/2 text-center text-lg font-bold tracking-widest text-white">
+        <p className="hero-about mt-10 w-1/2 text-center text-lg font-bold tracking-widest text-white">
           Un blog donde aprenderás cosas nuevas para crecer espiritualmente,
           conocer más de Dios y ponerte en la tarea de reflexionar sobre tu
           vida.
