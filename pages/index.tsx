@@ -14,9 +14,13 @@ const Home: NextPage = () => {
         <title>Ebenezer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="hero-img flex flex-col items-center justify-center bg-red-50">
-        <img className="w-48" src="/flower.png" alt="logo" />
-        <h1 className="text-3xl font-bold tracking-wider">Ebenezer</h1>
+      <div className="hero-img flex flex-col items-center justify-center object-cover">
+        <img className="w-48" src="/logo-blog.svg" alt="logo" />
+        <p className="hero-about mt-8 w-1/2 text-center text-lg font-bold tracking-widest text-white">
+          Un blog donde aprenderás cosas nuevas para crecer espiritualmente,
+          conocer más de Dios y ponerte en la tarea de reflexionar sobre tu
+          vida.
+        </p>
       </div>
       <Navbar />
       <div
