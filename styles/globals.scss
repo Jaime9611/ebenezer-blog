@@ -25,6 +25,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
     url('/bg-hero.jpg');
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   width: 100%;
   height: calc(100vh - 80px);
@@ -49,8 +50,12 @@ body {
 .navbar {
   color: var(--text-navbar);
   border-top: 1px solid var(--text-navbar);
-  border-bottom: 2px solid var(--text-navbar);
+  box-shadow: 0px 1px 10px 0px var(--text-navbar);
+  // border-bottom: 2px solid var(--text-navbar);
   &-logo {
     font-family: var(--font-navbar-logo);
+  }
+  &-icon {
+    fill: var(--text-navbar);
   }
 }
