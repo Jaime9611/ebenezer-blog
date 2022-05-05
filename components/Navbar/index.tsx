@@ -18,7 +18,7 @@ const Navbar: NextPage = () => {
   }, []);
 
   return (
-    <nav className="navbar sticky top-0 z-10 flex h-20 w-full items-center justify-between bg-white px-20">
+    <nav className="navbar sticky top-0 z-10 flex h-20 w-full items-center justify-between bg-white px-10 md:px-20">
       <Link href="/">
         <span className="navbar-logo cursor-pointer text-2xl font-bold hover:scale-105">
           EBENEZER

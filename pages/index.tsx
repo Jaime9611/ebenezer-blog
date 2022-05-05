@@ -21,6 +21,20 @@ const Home: NextPage = () => {
           conocer más de Dios y ponerte en la tarea de reflexionar sobre tu
           vida.
         </p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="mt-10 h-10 w-10 animate-bounce stroke-orange-200"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M19 13l-7 7-7-7m14-8l-7 7-7-7"
+          />
+        </svg>
       </div>
       <Navbar />
       <div
