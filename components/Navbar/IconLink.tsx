@@ -6,7 +6,7 @@ type Props = {
 
 const IconLink = (props: Props) => {
   return (
-    <li className="navbar-icon cursor-pointer pl-4 hover:scale-105">
+    <li className="navbar-icon cursor-pointer pl-4 hover:md:scale-105">
       {props.children}
     </li>
   );
